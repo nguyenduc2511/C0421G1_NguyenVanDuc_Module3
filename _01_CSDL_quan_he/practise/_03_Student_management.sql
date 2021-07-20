@@ -29,3 +29,4 @@ where id = 3;
 
   -- truncate table student; 
  
+ DELETE FROM student WHERE id=3;
