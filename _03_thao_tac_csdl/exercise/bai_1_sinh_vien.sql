@@ -5,26 +5,26 @@ from student;
 
 select * 
 from student 
-where StudentName like 'h%';
+where Student_Name like 'h%';
 
 select * 
 from class 
-where StartDate like '%-12-%';
+where Start_Date like '%-12-%';
 
 select * 
 from `subject` 
 where Credit in (3 , 5);
 
 update student
-set classid = 2
-where studentname = 'hung';
+set class_id = 2
+where student_name = 'hung';
 
 set sql_safe_updates = 0;
 
-select s.StudentName, sub.SubName, m.mark
+select s.Student_Name, sub.Sub_Name, m.mark
 from student s
-inner join mark m on s.StudentId = m.StudentId
-inner join `subject` sub on m.SubId = sub.SubId
-order by mark desc, StudentName asc;
+inner join mark m on s.Student_Id = m.Student_Id
+inner join `subject` sub on m.Sub_Id = sub.Sub_Id
+order by mark desc, Student_Name asc;
 -- asc là sắp xếp tăng dần mặc định, desc là sắp xếp giảm dần.--  
 

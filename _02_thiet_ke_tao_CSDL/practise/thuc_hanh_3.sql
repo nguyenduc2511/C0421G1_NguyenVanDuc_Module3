@@ -3,33 +3,33 @@ create database quan_ly_sinh_vien;
 use quan_ly_sinh_vien;
 
 CREATE TABLE Class(
-    ClassID   INT         NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    ClassName VARCHAR(60) NOT NULL,
-    StartDate DATETIME    NOT NULL,
+    Class_ID   INT         NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Class_Name VARCHAR(60) NOT NULL,
+    Start_Date DATETIME    NOT NULL,
     `Status`   BIT);
     
 CREATE TABLE Student(
-    StudentId   INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    StudentName VARCHAR(30) NOT NULL,
+    Student_Id   INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Student_Name VARCHAR(30) NOT NULL,
     Address     VARCHAR(50),
     Phone       VARCHAR(20),
     `Status`     BIT,
-    ClassId     INT NOT NULL,
-    FOREIGN KEY (ClassId) REFERENCES Class (ClassID));
+    Class_Id     INT NOT NULL,
+    FOREIGN KEY (Class_Id) REFERENCES Class (Class_ID));
     
  CREATE TABLE `Subject`(
-    SubId   INT         NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    SubName VARCHAR(30) NOT NULL,
+    Sub_Id   INT         NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Sub_Name VARCHAR(30) NOT NULL,
     Credit  TINYINT     NOT NULL DEFAULT 1 CHECK ( Credit >= 1 ),
     `Status`  BIT         DEFAULT 1);
  
  CREATE TABLE Mark(
-    MarkId    INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    SubId     INT NOT NULL,
-    StudentId INT NOT NULL,
+    Mark_Id    INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Sub_Id     INT NOT NULL,
+    Student_Id INT NOT NULL,
     Mark      FLOAT   DEFAULT 0 CHECK ( Mark BETWEEN 0 AND 100),
-    ExamTimes TINYINT DEFAULT 1,
-    UNIQUE (SubId, StudentId),
-    FOREIGN KEY (SubId) REFERENCES Subject (SubId),
-    FOREIGN KEY (StudentId) REFERENCES Student (StudentId)
+    Exam_Times TINYINT DEFAULT 1,
+    UNIQUE (Sub_Id, Student_Id),
+    FOREIGN KEY (Sub_Id) REFERENCES `Subject` (Sub_Id),
+    FOREIGN KEY (Student_Id) REFERENCES Student (Student_Id)
 );

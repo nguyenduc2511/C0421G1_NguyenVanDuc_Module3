@@ -7,21 +7,21 @@ select * from student where `Status` = true;
 
 select * from `subject` where Credit < 10;
 
-SELECT S.StudentId, S.StudentName, C.ClassName
-FROM Student S join Class C on S.ClassId = C.ClassID;
+SELECT S.Student_Id, S.Student_Name, C.Class_Name
+FROM Student S join Class C on S.Class_Id = C.Class_ID;
 
-SELECT S.StudentId, S.StudentName, C.ClassName
+SELECT S.Student_Id, S.Student_Name, C.Class_Name
 FROM Student S 
-join Class C on S.ClassId = C.ClassID
-WHERE C.ClassName = 'A1';
+join Class C on S.Class_Id = C.Class_ID
+WHERE C.Class_Name = 'A1';
 
-SELECT S.StudentId, S.StudentName, Sub.SubName, M.Mark
+SELECT S.Student_Id, S.Student_Name, Sub.Sub_Name, M.Mark
 FROM Student S 
-join Mark M on S.StudentId = M.StudentId 
-join `Subject` Sub on M.SubId = Sub.SubId;
+join Mark M on S.Student_Id = M.Student_Id 
+join `Subject` Sub on M.Sub_Id = Sub.Sub_Id;
 
-SELECT S.StudentId, S.StudentName, Sub.SubName, M.Mark
+SELECT S.Student_Id, S.Student_Name, Sub.Sub_Name, M.Mark
 FROM Student S 
-join Mark M on S.StudentId = M.StudentId 
-join `Subject` Sub on M.SubId = Sub.SubId
-WHERE Sub.SubName = 'CF';
+join Mark M on S.Student_Id = M.Student_Id 
+join `Subject` Sub on M.Sub_Id = Sub.Sub_Id
+WHERE Sub.Sub_Name = 'CF';
