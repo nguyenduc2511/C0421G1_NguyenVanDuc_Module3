@@ -13,7 +13,7 @@ where Start_Date like '%-12-%';
 
 select * 
 from `subject` 
-where Credit in (3 , 5);
+where Credit between 3 and 5;
 
 update student
 set class_id = 2
