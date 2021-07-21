@@ -5,7 +5,7 @@ use quan_ly_ban_hang;
 create table customer(
 id_c int auto_increment primary key,
 name_c varchar(50) not null,
-age_c int not null);
+age_c tinyint not null);
 
 create table `order`(
 id_o int auto_increment primary key,
