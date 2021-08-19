@@ -8,15 +8,6 @@ import java.util.*;
 public class ProductRepository implements IProductRepository {
     static Map<Integer, Product> productList = new HashMap<>();
 
-    //    static int id = autoIncrementId();
-//    static {
-//        productList.put(id,new Product(id,"Bàn chải bồn cầu","Việt Home Care",55000));
-//        productList.put(id,new Product(id,"Vim","Việt Home Care",45000));
-//        productList.put(id,new Product(id,"Nước Lau sàn Sunlight","Việt Home Care",60000));
-//        productList.put(id,new Product(id,"Cây lau sàn 360 độ","Việt Home Care",220000));
-//        productList.put(id,new Product(id,"Gif","Việt Home Care",65000));
-//        productList.put(id,new Product(id,"Nước lau kính","Việt Home Care",35000));
-//    }
     static {
         productList.put(1, new Product(1, "Toilet brush", "Việt Home Care", 55000));
         productList.put(2, new Product(2, "Vim", "Việt Home Care", 45000));
@@ -78,8 +69,4 @@ public class ProductRepository implements IProductRepository {
         }
         return productListResult;
     }
-    //    public static void main(String[] args) {
-//        ProductRepository productRepository = new ProductRepository();
-//        System.out.println(productRepository.searchByName("Nước lau kính"));
-//    }
 }
