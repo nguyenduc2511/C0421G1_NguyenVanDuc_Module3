@@ -20,29 +20,30 @@ VALUE ('Villa'), ('House') ,('Room');
 
   -- insert NhanVien:
  INSERT INTO  employee (employee_name,position_id,level_id,section_id,date_of_birth,id_card,salary,phone,email,address)
-VALUE ('Monkey D.Luffy', 1, 1, 2, '1997-06-24', '1234556',7,'0909123456','kietque@gmail.com','Quang Tri'),
-('Roronoa Zoro', 2, 3, 4, '1992-11-07', '93978675',8,'0936231026','mongdu@gmail.com',' Đà Nẵng'),
-('Nami', 3, 3, 4, '1988-03-17','95672301',12, '0365127783', 'tuan@yahoo.com', 'Quảng Nam'),
-('Nico robin', 6, 4, 4, '1977-02-11','23409135',25, '0999333999', 'badao@outlook.com', 'Đà Nẵng'),
-('tony tony chopper', 4, 2, 1, '1985-09-19','26345903',15, '0364923789', 'hatang@.gmail.com', 'Huế'),
-('sanji', 2, 1, 3, '1995-01-16','42671890',6, '0983401297', 'dongphuc@.gmail.com', 'Bình Định'),
-('jinbe', 1, 2, 1, '1993-05-10','86059271',8, '0367019236', 'taidong@.gmail.com', 'Lào Cai'),
-('brook', 1, 1, 3, '1985-01-17','97016507',9, '0985160267', 'songsinh@.gmail.com', 'Quảng Bình');
+VALUE ('Monkey D.Luffy', 1, 1, 2, '1997-06-24', '1234556',7,'0909123456','luffy@gmail.com','Quang Tri'),
+('Roronoa Zoro', 2, 3, 4, '1992-11-07', '93978675',8,'0936231026','zoro@gmail.com',' Đà Nẵng'),
+('Nami', 3, 3, 4, '1988-03-17','95672301',12, '0365127783', 'nami@yahoo.com', 'Quảng Nam'),
+('Nico robin', 6, 4, 4, '1977-02-11','23409135',25, '0999333999', 'robin@outlook.com', 'Đà Nẵng'),
+('tony tony chopper', 4, 2, 1, '1985-09-19','26345903',15, '0364923789', 'chopper@.gmail.com', 'Huế'),
+('sanji', 2, 1, 3, '1995-01-16','42671890',6, '0983401297', 'sanji@gmail.com', 'Bình Định'),
+('jinbe', 1, 2, 1, '1993-05-10','86059271',8, '0367019236', 'jinbe@gmail.com', 'Lào Cai'),
+('brook', 1, 1, 3, '1985-01-17','97016507',9, '0985160267', 'brook@gmail.com', 'Quảng Bình'),
+('tantan', 1, 1, 3, '1985-01-17','97016507',9, '0985160267', 'tan@gmail.com', 'Hải Châu') ;
    -- insert KhachHang:
  INSERT INTO  customer (customer_type_id,customer_name,date_of_birth,id_card,phone,email,address)
-VALUE (1,'kaido','1993-11-24', '3519068','0909888467','diemvo@gmail.com','Vinh'),
-(2, 'big mom','1975-12-24', '19804891','0986058250','chautram@gmail.com','Quảng Trị'),
+VALUE (1,'kaido','1993-11-24', '3519068','0909888467','kaido@gmail.com','Vinh'),
+(2, 'big mom','1975-12-24', '19804891','0986058250','bigmom@gmail.com','Quảng Trị'),
 -- platinium - total_payment >= 10M
-(3, 'king', '1982-04-01','24509135','0984378013', 'manhle@yahoo.com', 'Đà Nẵng'),
-(4, 'queen','1963-09-03','30314056', '0310290270', 'hanhtran@outlook.com', 'Quảng Bình'),
-(5,'jack', '1997-08-08','901309540', '0989134257', 'dongnhat@.gmail.com', 'Hà Tĩnh'),
-(1,'charlotte katakuri','1995-11-11', '241445602','0905336771','thanhha2332@gmail.com','Quảng Ngãi'),
+(3, 'king', '1982-04-01','24509135','0984378013', 'king@yahoo.com', 'Đà Nẵng'),
+(4, 'queen','1963-09-03','30314056', '0310290270', 'queen@outlook.com', 'Quảng Bình'),
+(5,'jack', '1997-08-08','901309540', '0989134257', 'jack@.gmail.com', 'Hà Tĩnh'),
+(1,'charlotte katakuri','1995-11-11', '241445602','0905336771','katakuri@gmail.com','Quảng Ngãi'),
 -- id = 5 - contract_id = null
-(4, 'charlotte cracker', '1988-01-11','080923567','0347890123', 'vanmanh@yahoo.com', 'Hà Nội'),
+(4, 'charlotte cracker', '1988-01-11','080923567','0347890123', 'cracker@yahoo.com', 'Hà Nội'),
 -- id = 7 - contract_id = null
-(2, 'Sakazuki', '1975-09-16','39716354','0123530298', 'lylua@gmail.com', 'Lạng Sơn'), -- platinium - total_payment < 10M
-(3,'kizaru', '1963-12-06','17583923', '0909469230', 'tieulong@.gmail.com', 'Cao Bằng'), -- khách trước 2016
-(1,'Fujitora', '1969-09-11','376501291', '0359023190', 'phihung1271@.gmail.com', 'Hồ Chí Minh');
+(2, 'Sakazuki', '1975-09-16','39716354','0123530298', 'sakazuki@gmail.com', 'Lạng Sơn'), -- platinium - total_payment < 10M
+(3,'kizaru', '1963-12-06','17583923', '0909469230', 'kizaru@.gmail.com', 'Cao Bằng'), -- khách trước 2016
+(1,'Fujitora', '1969-09-11','376501291', '0359023190', 'fujitora@.gmail.com', 'Hồ Chí Minh');
 
    -- insert DichVu: 
 INSERT INTO service (service_name, area ,floors,max_person,rental_fee,rental_type_id,service_type_id,`status`)
