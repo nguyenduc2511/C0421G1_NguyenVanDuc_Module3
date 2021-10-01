@@ -125,11 +125,6 @@ SELECT service_id
 FROM contract
 WHERE date_make_contract BETWEEN '2019-01-01' AND '2019-06-30'
 )
--- AND NOT EXISTS (
--- SELECT service_id
--- FROM contract CT
--- WHERE CT.service_id = S.service_id  and (date_make_contract  BETWEEN '2019-01-01' AND '2019-06-30')
--- )
 GROUP BY CT.contract_id;
 
 -- 13.	Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng. (Lưu ý là có thể có nhiều dịch vụ có số 
@@ -166,6 +161,7 @@ HAVING COUNT(CT.contract_id) <= 3;
 
 -- 16.	Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2017 đến năm 2019.
 SET SQL_SAFE_UPDATES = 0;
+
 DELETE
 FROM employee E
 WHERE E.employee_id NOT IN (
@@ -244,7 +240,7 @@ DROP TABLE temp_accompanied;
 -- HoTen, Email, SoDienThoai, NgaySinh, DiaChi.
 SELECT employee_id, employee_name, email, phone, date_of_birth, address
 FROM employee
-UNION 
+UNION all
 SELECT customer_id, customer_name, email, phone, date_of_birth, address
 FROM customer;
 
@@ -255,11 +251,19 @@ CREATE VIEW view_employee AS
 SELECT E.employee_id, E.employee_name,E.position_id, E.level_id,E.section_id,E.date_of_birth,E.id_card,E.address, CT.date_make_contract
 FROM employee E
 INNER JOIN contract CT ON CT.employee_id = E.employee_id
-WHERE address LIKE '%Đà Nẵng%' AND CT.date_make_contract = '2019-12-12';
+WHERE address LIKE '%Liên Chiểu%' AND CT.date_make_contract = '2019-12-12';
 
 SELECT * FROM view_employee;
+drop view view_employee;
 
+-- 22. Thông qua khung nhìn V_NHANVIEN thực hiện cập nhật địa chỉ thành
+-- “Liên Chiểu” đối với tất cả các Nhân viên được nhìn thấy bởi khung nhìn này.
 
+UPDATE view_employee
+SET address = 'Liên Chiểu';
+ 
+
+SELECT* FROM view_employee;
 
 
 
