@@ -17,7 +17,7 @@ import java.util.List;
 
 @WebServlet(name = "CustomerServlet", urlPatterns = {"", "/products"})
 public class ProductServlet extends HttpServlet {
-    private IProductService productService = new ProductService();
+    private final IProductService productService = new ProductService();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
