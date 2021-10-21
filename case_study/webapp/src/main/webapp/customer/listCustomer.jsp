@@ -51,7 +51,7 @@
                         <h3 style="color: red">Customer List Empty!</h3>
                     </c:if>
                     <c:if test="${not empty customerList}">
-                        <table class="table">
+                        <table id="tableCustomer" class="table table-striped" >
                             <thead>
                             <tr>
                                 <th>ID</th>
@@ -90,9 +90,11 @@
                                             Edit
                                         </a>
                                     </td>
+
                                     <td>
-                                        <button>
-                                            DeLete
+                                        <button type="button" class="btn btn-danger" onclick="onDelete(${customer.id})"
+                                                data-toggle="modal" data-target="#exampleModal">
+                                            Delete
                                         </button>
                                     </td>
                                 </tr>
@@ -101,28 +103,32 @@
                         </table>
                     </c:if>
                     <%--            modal--%>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLabel">Confirm delete</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
-                                <form action="/customer" method="get">
+                                <form action="/customer?action=delete" method="get">
                                     <input type="hidden" name="action" value="delete">
-                                    <input type="hidden" name="id" value="" id="idCustomerDel">
+                                    <input type="hidden" name="id" id="idCustomerDel">
                                     <div class="modal-body">
-                                        Do you wanna delete <span style="color: red"><strong>${customer.name()}</strong></span>
+                                        Do you wanna delete <span
+                                            style="color: red"><strong>${customer.name}</strong></span>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Ok</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                        </button>
+                                        <button type="submit" class="btn btn-danger">OK</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -145,4 +151,14 @@
 <script src="/assert/datatables/js/dataTables.bootstrap4.min.js"></script>
 <script src="/assert/bootstrap413/js/bootstrap.min.js"></script>
 <script src="/assert/bootstrap413/js/bootstrap.bundle.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#tableCustomer').dataTable({
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 4
+        })
+    })
+</script>
 </html>

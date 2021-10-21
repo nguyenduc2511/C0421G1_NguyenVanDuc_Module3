@@ -22,7 +22,7 @@ public class CustomerRepositoryImp implements CustomerRepository {
         if(connection != null){
             try {
                 statement = connection.prepareStatement("select customer_id, customer_name, customer_birthday, customer_gender, customer_id_card, customer_phone, customer_email, customer_adress, customer_type_name\n" +
-                        "from customer c inner join customer_type ct on c.customer_type_id = ct.customer_type_id;");
+                        "from customer c inner join customer_type ct on c.customer_type_id = ct.customer_type_id ORDER BY customer_id;");
                 ResultSet resultSet = statement.executeQuery();
 
                 Customer customer = null;
